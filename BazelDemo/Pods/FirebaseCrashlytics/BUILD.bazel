@@ -1,0 +1,60 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseCrashlytics",
+    srcs = glob([
+        "Crashlytics/Crashlytics/**/*.c",
+        "Crashlytics/Crashlytics/**/*.h",
+        "Crashlytics/Crashlytics/**/*.m",
+        "Crashlytics/Crashlytics/**/*.mm",
+        "Crashlytics/Protogen/**/*.c",
+        "Crashlytics/Protogen/**/*.h",
+        "Crashlytics/Shared/**/*.h",
+        "Crashlytics/Shared/**/*.m",
+        "Crashlytics/third_party/**/*.h",
+        "FirebaseCore/Extension/*.h",
+        "FirebaseInstallations/Source/Library/Private/*.h",
+        "Interop/Analytics/Public/*.h",
+    ]),
+    objc_copts = ["-IPods/FirebaseCrashlytics"],
+    platforms = {"ios": "11.0"},
+    public_headers = [
+        "Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRCrashlytics.h",
+        "Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRCrashlyticsReport.h",
+        "Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FirebaseCrashlytics.h",
+        "Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRExceptionModel.h",
+        "Crashlytics/Crashlytics/Public/FirebaseCrashlytics/FIRStackFrame.h",
+    ],
+    sdk_dylibs = [
+        "c++",
+        "z",
+    ],
+    sdk_frameworks = [
+        "Security",
+        "SystemConfiguration",
+        "MetricKit",
+    ],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebaseCrashlytics",
+    ],
+    visibility = ["//visibility:public"],
+    xcconfig = {
+        # "GCC_C_LANGUAGE_STANDARD": "c99",
+        "GCC_PREPROCESSOR_DEFINITIONS": [
+            "CLS_SDK_NAME=Crashlytics iOS SDK",
+            "PB_FIELD_32BIT=1",
+            "PB_NO_PACKED_STRUCTS=1",
+            "PB_ENABLE_MALLOC=1",
+        ],
+    },
+    deps = [
+        "//Pods/FirebaseCore",
+        "//Pods/FirebaseInstallations",
+        "//Pods/FirebaseSessions",
+        "//Pods/GoogleDataTransport",
+        "//Pods/GoogleUtilities",
+        "//Pods/PromisesObjC",
+        "//Pods/nanopb",
+    ],
+)

@@ -1,0 +1,65 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_jar")
+
+http_jar(
+    name = "bazel_diff",
+    urls = [
+        "https://github.com/Tinder/bazel-diff/releases/download/4.3.0/bazel-diff_deploy.jar",
+    ],
+    sha256 = "9c4546623a8b9444c06370165ea79a897fcb9881573b18fa5c9ee5c8ba0867e2",
+)
+
+git_repository(
+    name = "build_bazel_rules_ios",
+    remote = "https://github.com/bazel-ios/rules_ios.git",
+    commit = "3884a206840967cee89c4bf16202bd726c118772",
+)
+
+load(
+    "@build_bazel_rules_ios//rules:repositories.bzl",
+    "rules_ios_dependencies"
+)
+
+rules_ios_dependencies()
+
+http_archive(
+    name = "rules_xcodeproj",
+    sha256 = "ce92b8784fe525dd420422fb09ea8e1f2dfee89e41ba401d33e3a6687199a7d0",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.6.0/release.tar.gz",
+)
+
+load(
+    "@rules_xcodeproj//xcodeproj:repositories.bzl",
+    "xcodeproj_rules_dependencies",
+)
+
+xcodeproj_rules_dependencies()
+
+load(
+    "@build_bazel_rules_apple//apple:repositories.bzl",
+    "apple_rules_dependencies",
+)
+
+apple_rules_dependencies()
+
+load(
+    "@build_bazel_rules_swift//swift:repositories.bzl",
+    "swift_rules_dependencies",
+)
+
+swift_rules_dependencies()
+
+load(
+    "@build_bazel_rules_swift//swift:extras.bzl",
+    "swift_rules_extra_dependencies",
+)
+
+swift_rules_extra_dependencies()
+
+load(
+    "@build_bazel_apple_support//lib:repositories.bzl",
+    "apple_support_dependencies",
+)
+
+apple_support_dependencies()

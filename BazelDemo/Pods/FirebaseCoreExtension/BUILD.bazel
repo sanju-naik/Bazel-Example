@@ -1,0 +1,24 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseCoreExtension",
+    srcs = glob([
+        "FirebaseCore/Extension/*.h",
+        "FirebaseCore/Extension/*.m",
+    ]),
+    platforms = {"ios": "10.0"},
+    public_headers = [
+        "FirebaseCore/Extension/FIRAppInternal.h",
+        "FirebaseCore/Extension/FIRComponent.h",
+        "FirebaseCore/Extension/FIRComponentContainer.h",
+        "FirebaseCore/Extension/FIRComponentType.h",
+        "FirebaseCore/Extension/FIRDependency.h",
+        "FirebaseCore/Extension/FirebaseCoreInternal.h",
+        "FirebaseCore/Extension/FIRHeartbeatLogger.h",
+        "FirebaseCore/Extension/FIRLibrary.h",
+        "FirebaseCore/Extension/FIRLogger.h",
+        "FirebaseCore/Extension/FIROptionsInternal.h",
+    ],
+    visibility = ["//visibility:public"],
+    deps = ["//Pods/FirebaseCore"],
+)

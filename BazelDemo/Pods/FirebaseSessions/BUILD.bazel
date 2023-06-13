@@ -1,0 +1,40 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseSessions",
+    srcs = glob([
+        "FirebaseSessions/Sources/**/*.swift",
+        "FirebaseSessions/SourcesObjC/**/*.c",
+        "FirebaseSessions/SourcesObjC/**/*.h",
+        "FirebaseSessions/SourcesObjC/**/*.m",
+    ]),
+    objc_copts = ["-IPods/FirebaseSessions"],
+    platforms = {"ios": "11.0"},
+    public_headers = [
+        "FirebaseSessions/SourcesObjC/NanoPB/FIRSESNanoPBHelpers.h",
+        "FirebaseSessions/SourcesObjC/Protogen/nanopb/sessions.nanopb.h",
+    ],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebaseSessions",
+    ],
+    swift_version = "5.3",
+    visibility = ["//visibility:public"],
+    xcconfig = {
+        "GCC_C_LANGUAGE_STANDARD": "c99",
+        "GCC_PREPROCESSOR_DEFINITIONS": [
+            "PB_FIELD_32BIT=1",
+            "PB_NO_PACKED_STRUCTS=1",
+            "PB_ENABLE_MALLOC=1",
+        ],
+    },
+    deps = [
+        "//Pods/FirebaseCore",
+        "//Pods/FirebaseCoreExtension",
+        "//Pods/FirebaseInstallations",
+        "//Pods/GoogleDataTransport",
+        "//Pods/GoogleUtilities",
+        "//Pods/PromisesSwift",
+        "//Pods/nanopb",
+    ],
+)

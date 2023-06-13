@@ -1,0 +1,108 @@
+# Common Build flags
+build \
+  --spawn_strategy=local \
+  --worker_sandboxing=false \
+  --features=swift.cacheable_swiftmodules \
+  --apple_platform_type=ios \
+  --verbose_failures \
+  --features=swift.use_global_module_cache \
+  --strategy=SwiftCompile=worker \
+  --experimental_guard_against_concurrent_changes \
+  --features=apple.skip_codesign_simulator_bundles \
+  --features=apple.arm64_simulator_use_device_deps \
+  --features=swift.index_while_building \
+  --features=swift.use_global_index_store \
+  --disk_cache=~/Library/Developer/Xcode/DerivedData/BazelDemoCache.noindex \
+  --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec \
+
+test:Debug \
+  --spawn_strategy=local \
+  --features=debug_prefix_map_pwd_is_dot \
+  --features=swift.cacheable_swiftmodules \
+  --features=swift.debug_prefix_map \
+  --apple_platform_type=ios \
+  --verbose_failures \
+  --sandbox_debug \
+  --compilation_mode=dbg \
+  --features=swift.index_while_building \
+  --features=swift.use_global_module_cache \
+  --strategy=SwiftCompile=worker \
+  --swiftcopt=-index-ignore-system-modules \
+  --test_output=all \
+  --disk_cache=~/Library/Developer/Xcode/DerivedData/BazelCache.noindex \
+  --experimental_guard_against_concurrent_changes \
+  --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec \
+
+
+# Configuration specific flags.
+
+build:Release \
+  --//:variant=release \
+  --compilation_mode=opt \
+
+
+build:Debug \
+  --//:variant=debug \
+  --compilation_mode=dbg \
+
+# This config used for running tests on CI, in `code_coverage.sh`
+build:Debug:CI \
+  --//:variant=debug:ci \
+  --build_event_text_file=/tmp/bazel-outputs-info.txt \
+  --features=debug_prefix_map_pwd_is_dot \
+  --features=swift.debug_prefix_map \
+  --compilation_mode=dbg \
+  --experimental_guard_against_concurrent_changes \
+  --experimental_use_llvm_covmap \
+  --test_env=COVERAGE_PRODUCE_JSON=TRUE \
+  --test_output=all \
+  --test_summary=detailed \
+  --cache_test_results=no \
+  --notest_keep_going \
+  --swiftcopt=-whole-module-optimization \
+  --host_swiftcopt=-whole-module-optimization \
+  --experimental_ui_max_stdouterr_bytes=-1 \
+  --collect_code_coverage \
+  --features=dead_strip \
+
+build:Integration \
+  --//:variant=integration \
+  --compilation_mode=opt \
+  --features=dead_strip \
+  --swiftcopt=-Onone \
+  --copt=-O0 \
+  --objc_enable_binary_stripping \
+  --define=apple.package_swift_support=no \
+  --define=apple.compress_ipa=yes \
+  --apple_generate_dsym \
+  --output_groups=+dsyms \
+  --features=-swift.enable_testing \
+  --features=-swift.coverage \
+
+build:Integration:Simulator \
+  --//:variant=integration \
+  --compilation_mode=fastbuild \
+  --features=dead_strip \
+  --swiftcopt=-Onone \
+  --copt=-O0 \
+  --features=-swift.enable_testing \
+  --features=-swift.coverage \
+
+build:Integration:Appstore \
+  --//:variant=integration \
+  --compilation_mode=opt \
+  --features=dead_strip \
+  --apple_generate_dsym \
+
+run:Debug \
+  --compilation_mode=dbg \
+
+# Generate profile & json execution files for build analysis
+# Here is a documentation on how to generate profile & exec files - https://github.com/MobileNativeFoundation/rules_xcodeproj/blob/main/docs/usage.md#rules_xcodeproj_indexbuild 
+build:rules_xcodeproj --profile=/tmp/profile.gz
+build:rules_xcodeproj_indexbuild --profile=
+build:rules_xcodeproj --execution_log_json_file=/tmp/exec-1.json
+build:rules_xcodeproj_indexbuild --execution_log_json_file=
+
+
+try-import .bazel_remote_bazelrc

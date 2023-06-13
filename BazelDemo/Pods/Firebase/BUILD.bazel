@@ -1,0 +1,13 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "Firebase",
+    srcs = glob(["CoreOnly/Sources/Firebase.h"]),
+    platforms = {"ios": "10.0"},
+    public_headers = ["CoreOnly/Sources/Firebase.h"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//Pods/FirebaseAnalytics",
+        "//Pods/FirebaseCore",
+    ],
+)

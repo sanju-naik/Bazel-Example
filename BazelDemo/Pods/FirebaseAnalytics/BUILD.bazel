@@ -1,0 +1,109 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseAnalytics",
+    platforms = {"ios": "10.0"},
+    sdk_dylibs = [
+        "c++",
+        "sqlite3",
+        "z",
+    ],
+    sdk_frameworks = ["StoreKit"],
+    vendored_xcframeworks = [
+        {
+            "name": "FirebaseAnalytics",
+            "slices": [
+                {
+                    "identifier": "ios-arm64_armv7",
+                    "platform": "ios",
+                    "platform_variant": "",
+                    "supported_archs": [
+                        "arm64",
+                        "armv7",
+                    ],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+                {
+                    "identifier": "ios-arm64_i386_x86_64-simulator",
+                    "platform": "ios",
+                    "platform_variant": "simulator",
+                    "supported_archs": [
+                        "arm64",
+                        "i386",
+                        "x86_64",
+                    ],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+                {
+                    "identifier": "ios-arm64_x86_64-maccatalyst",
+                    "platform": "ios",
+                    "platform_variant": "maccatalyst",
+                    "supported_archs": [
+                        "arm64",
+                        "x86_64",
+                    ],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+                {
+                    "identifier": "macos-arm64_x86_64",
+                    "platform": "macos",
+                    "platform_variant": "",
+                    "supported_archs": [
+                        "arm64",
+                        "x86_64",
+                    ],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+                {
+                    "identifier": "tvos-arm64",
+                    "platform": "tvos",
+                    "platform_variant": "",
+                    "supported_archs": ["arm64"],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+                {
+                    "identifier": "tvos-arm64_x86_64-simulator",
+                    "platform": "tvos",
+                    "platform_variant": "simulator",
+                    "supported_archs": [
+                        "arm64",
+                        "x86_64",
+                    ],
+                    "path": "Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework",
+                    "build_type": {
+                        "linkage": "static",
+                        "packaging": "framework",
+                    },
+                },
+            ],
+        },
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//Pods/FirebaseCore",
+        "//Pods/FirebaseInstallations",
+        "//Pods/GoogleAppMeasurement",
+        "//Pods/GoogleUtilities",
+        "//Pods/nanopb",
+    ],
+)

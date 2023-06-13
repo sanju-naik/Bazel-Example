@@ -1,0 +1,35 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseDynamicLinks",
+    srcs = glob([
+        "FirebaseDynamicLinks/Sources/**/*.m",
+        "FirebaseDynamicLinks/Sources/**/*.h",
+        "Interop/Analytics/Public/*.h",
+        "FirebaseCore/Extension/*.h",
+    ]),
+    objc_copts = ["-IPods/FirebaseDynamicLinks"],
+    platforms = {"ios": "11.0"},
+    public_headers = [
+        "FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FDLURLComponents.h",
+        "FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLink.h",
+        "FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLinks.h",
+        "FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLinksCommon.h",
+        "FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FirebaseDynamicLinks.h",
+    ],
+    sdk_frameworks = ["QuartzCore"],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebaseDynamicLinks",
+    ],
+    visibility = ["//visibility:public"],
+    weak_sdk_frameworks = ["WebKit"],
+    xcconfig = {
+        "GCC_C_LANGUAGE_STANDARD": "c99",
+        "GCC_PREPROCESSOR_DEFINITIONS": [
+            "FIRDynamicLinks3P",
+            "GIN_SCION_LOGGING",
+        ],
+    },
+    deps = ["//Pods/FirebaseCore"],
+)

@@ -1,0 +1,59 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebasePerformance",
+    srcs = glob([
+        "FirebasePerformance/Sources/**/*.m",
+        "FirebasePerformance/Sources/**/*.h",
+    ]),
+    non_arc_srcs = glob(
+        [
+            "FirebasePerformance/Sources/**/*.c",
+            "FirebasePerformance/Sources/**/*.m",
+            "FirebasePerformance/Sources/**/*.h",
+            "FirebaseCore/Extension/*.h",
+            "FirebaseInstallations/Source/Library/Private/*.h",
+            "FirebaseRemoteConfig/Sources/Private/*.h",
+        ],
+        exclude = [
+            "FirebasePerformance/Sources/**/*.m",
+            "FirebasePerformance/Sources/**/*.h",
+        ],
+    ),
+    objc_copts = ["-IPods/FirebasePerformance"],
+    platforms = {"ios": "11.0"},
+    public_headers = [
+        "FirebasePerformance/Sources/Public/FirebasePerformance/FirebasePerformance.h",
+        "FirebasePerformance/Sources/Public/FirebasePerformance/FIRHTTPMetric.h",
+        "FirebasePerformance/Sources/Public/FirebasePerformance/FIRPerformance.h",
+        "FirebasePerformance/Sources/Public/FirebasePerformance/FIRPerformanceAttributable.h",
+        "FirebasePerformance/Sources/Public/FirebasePerformance/FIRTrace.h",
+    ],
+    sdk_frameworks = [
+        "CoreTelephony",
+        "SystemConfiguration",
+    ],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebasePerformance",
+    ],
+    visibility = ["//visibility:public"],
+    xcconfig = {
+        "GCC_C_LANGUAGE_STANDARD": "c99",
+        "GCC_PREPROCESSOR_DEFINITIONS": [
+            "FIRPerformance_LIB_VERSION=10.8.0",
+            "PB_FIELD_32BIT=1",
+            "PB_NO_PACKED_STRUCTS=1",
+            "PB_ENABLE_MALLOC=1",
+        ],
+    },
+    deps = [
+        "//Pods/FirebaseCore",
+        "//Pods/FirebaseInstallations",
+        "//Pods/FirebaseRemoteConfig",
+        "//Pods/FirebaseSessions",
+        "//Pods/GoogleDataTransport",
+        "//Pods/GoogleUtilities",
+        "//Pods/nanopb",
+    ],
+)

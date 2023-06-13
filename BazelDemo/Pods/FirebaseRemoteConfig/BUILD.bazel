@@ -1,0 +1,31 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseRemoteConfig",
+    srcs = glob([
+        "FirebaseRemoteConfig/Sources/**/*.m",
+        "FirebaseRemoteConfig/Sources/**/*.h",
+        "Interop/Analytics/Public/*.h",
+        "FirebaseABTesting/Sources/Private/*.h",
+        "FirebaseCore/Extension/*.h",
+        "FirebaseInstallations/Source/Library/Private/*.h",
+    ]),
+    objc_copts = ["-IPods/FirebaseRemoteConfig"],
+    platforms = {"ios": "11.0"},
+    public_headers = [
+        "FirebaseRemoteConfig/Sources/Public/FirebaseRemoteConfig/FirebaseRemoteConfig.h",
+        "FirebaseRemoteConfig/Sources/Public/FirebaseRemoteConfig/FIRRemoteConfig.h",
+    ],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebaseRemoteConfig",
+    ],
+    visibility = ["//visibility:public"],
+    xcconfig = {"GCC_C_LANGUAGE_STANDARD": "c99"},
+    deps = [
+        "//Pods/FirebaseABTesting",
+        "//Pods/FirebaseCore",
+        "//Pods/FirebaseInstallations",
+        "//Pods/GoogleUtilities",
+    ],
+)

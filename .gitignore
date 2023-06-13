@@ -88,3 +88,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+BazelDemo/bazel-BazelDemo
+BazelDemo/bazel-bin
+BazelDemo/bazel-out
+BazelDemo/bazel-testlogs
+
+BazelDemo/BazelDemo.xcodeproj

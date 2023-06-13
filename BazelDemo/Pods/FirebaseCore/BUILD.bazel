@@ -1,0 +1,40 @@
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+apple_framework(
+    name = "FirebaseCore",
+    srcs = glob([
+        "FirebaseCore/Sources/**/*.m",
+        "FirebaseCore/Sources/**/*.h",
+        "FirebaseCore/Extension/*.h",
+    ]),
+    objc_copts = [
+        "-fno-autolink",
+        "-IPods/FirebaseCore",
+    ],
+    platforms = {"ios": "10.0"},
+    public_headers = [
+        "FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h",
+        "FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h",
+        "FirebaseCore/Sources/Public/FirebaseCore/FirebaseCore.h",
+        "FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h",
+        "FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h",
+        "FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h",
+    ],
+    sdk_frameworks = [
+        "Foundation",
+        "UIKit",
+    ],
+    swift_copts = [
+        "-Xcc",
+        "-IPods/FirebaseCore",
+    ],
+    visibility = ["//visibility:public"],
+    xcconfig = {
+        "GCC_C_LANGUAGE_STANDARD": "c99",
+        "GCC_PREPROCESSOR_DEFINITIONS": ["Firebase_VERSION=10.8.0"],
+    },
+    deps = [
+        "//Pods/FirebaseCoreInternal",
+        "//Pods/GoogleUtilities",
+    ],
+)
