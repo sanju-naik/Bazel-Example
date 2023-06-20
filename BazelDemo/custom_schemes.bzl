@@ -7,7 +7,7 @@ load(
 
 def custom_schemes_for_targets(targets, test_targets):
     schemes = []
-    BazelDemo_schemes = ['BazelDemo-Debug', 'BazelDemo-Release']
+    BazelDemo_schemes = ['BazelDemo-Debug', 'BazelDemo-Release', 'BazelDemo-Alpha']
     for target in targets:
         # For Xcode scheme, just use the plain string scheme name, rather than fully qualified bazel build target
         # Ex: If build target is "//Home:AccountKit", then just use AccountKit for Xcode Scheme name.
@@ -41,6 +41,8 @@ def build_configuration_for(target):
         return 'Debug'
     elif target == 'BazelDemo-Release':
         return 'Release'
+    elif target == 'BazelDemo-Alpha':
+        return 'Alpha'
     else:
         return 'Debug'
 

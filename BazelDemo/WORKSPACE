@@ -25,8 +25,8 @@ rules_ios_dependencies()
 
 http_archive(
     name = "rules_xcodeproj",
-    sha256 = "ce92b8784fe525dd420422fb09ea8e1f2dfee89e41ba401d33e3a6687199a7d0",
-    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.6.0/release.tar.gz",
+    sha256 = "672a5752a16d4fdb83d872ffe2859f1b6f2f2806558ea0185376738179ed421d",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.7.0/release.tar.gz",
 )
 
 load(

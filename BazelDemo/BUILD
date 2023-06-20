@@ -32,6 +32,16 @@ xcodeproj(
                   "//:variant": "debug",
                   "//command_line_option:features": [],
                   },
+        "Alpha": {"//command_line_option:compilation_mode": "opt",
+                    "//:variant": "alpha",
+                    "//command_line_option:apple_generate_dsym": True,
+                    "//command_line_option:features": [
+                        "swift.debug_prefix_map",
+                        "swift.debug_prefix_map_pwd_is_dot",
+                        "swift.file_prefix_map",
+                        "swift.full_debug_info",
+                    ],
+                },
         "Release": {"//command_line_option:compilation_mode": "opt",
                     "//:variant": "release",
                     "//command_line_option:apple_generate_dsym": True,
@@ -68,7 +78,8 @@ swift_library(
 ios_application(
     name = "BazelDemo",
     bundle_id = select({
-        "//:Debug": "com.bazeldemo.debug.app",
+        "//:Debug": "com.go-jek.ent.staging.develop", # com.bazeldemo.debug.app
+        "//:Alpha": "com.bazeldemo.alpha.app",
         "//:Release": "com.bazeldemo.release.app",
     }), 
     families = ["iphone"],
@@ -81,15 +92,11 @@ ios_application(
         ":Debug": ["Resources/Debug/GoogleService-Info.plist"],
         "//conditions:default": None, 
     }),
-     entitlements = select({
+    entitlements = select({
             ":Debug": "Entitlements/Debug.entitlements",
+            ":Alpha": "Entitlements/Alpha.entitlements",
             ":Release": "Entitlements/Release.entitlements",
      }),
-
-    # provisioning_profile = select({
-    #     "//:Debug": "",
-    #     "//conditions:default": None,
-    # })
     # launch_storyboard = "BazelDemo/Base.lproj/LaunchScreen.storyboard",
   )
 
@@ -111,6 +118,14 @@ config_setting(
         name = "Debug",
         flag_values = {
             "//:variant": "debug",
+        },
+        visibility = ["//visibility:public"],
+    )
+
+config_setting(
+        name = "Alpha",
+        flag_values = {
+            "//:variant": "alpha",
         },
         visibility = ["//visibility:public"],
     )
