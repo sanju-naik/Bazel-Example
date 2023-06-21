@@ -1,0 +1,81 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name S4LocalStorage
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+public protocol LocalStorageInterface {
+  func upsertDocument(_ data: S4LocalStorage.S4Document, _ completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  func fetchDocuments(_ columns: [S4LocalStorage.S4Document.CodingKeys : Any], _ completion: @escaping (Swift.Result<[S4LocalStorage.S4Document]?, Swift.Error>) -> Swift.Void)
+  func deleteDocuments(_ columns: [S4LocalStorage.S4Document.CodingKeys : Any], _ completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  func clearDocumentsTable(_ completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  func insertSnapshot(_ data: [S4LocalStorage.S4Document], _ completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  func clearVersionTable(_ completion: @escaping (Swift.Bool) -> ())
+  func upsertStateIdAndVersion(_ data: S4LocalStorage.StateVersion, _ completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  func fetchLastSyncedVersion(_ columns: [S4LocalStorage.StateVersion.CodingKeys : Any]) throws -> Swift.Int64?
+}
+public struct S4Document : Swift.Codable {
+  public let stateId: Swift.String
+  public let collectionName: Swift.String
+  public let docId: Swift.String
+  public let content: Foundation.Data
+  public let expiry: Swift.Int64?
+  public static var databaseTableName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case stateId, collectionName, docId, content, expiry
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(stateId: Swift.String, collectionName: Swift.String, docId: Swift.String, content: Foundation.Data, expiry: Swift.Int64?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension S4LocalStorage.S4Document : Swift.Equatable {
+  public static func == (lhs: S4LocalStorage.S4Document, rhs: S4LocalStorage.S4Document) -> Swift.Bool
+}
+public struct StateVersion : Swift.Codable {
+  public let stateId: Swift.String
+  public let version: Swift.Int64
+  public static var databaseTableName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case stateId, version
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(stateId: Swift.String, version: Swift.Int64)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension S4LocalStorage.StateVersion : Swift.Equatable {
+  public static func == (lhs: S4LocalStorage.StateVersion, rhs: S4LocalStorage.StateVersion) -> Swift.Bool
+}
+extension S4LocalStorage.S4Document.CodingKeys : Swift.Equatable {}
+extension S4LocalStorage.S4Document.CodingKeys : Swift.Hashable {}
+extension S4LocalStorage.S4Document.CodingKeys : Swift.RawRepresentable {}
+extension S4LocalStorage.StateVersion.CodingKeys : Swift.Equatable {}
+extension S4LocalStorage.StateVersion.CodingKeys : Swift.Hashable {}
+extension S4LocalStorage.StateVersion.CodingKeys : Swift.RawRepresentable {}

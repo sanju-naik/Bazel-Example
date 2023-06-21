@@ -1,0 +1,288 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name S4Protos
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import SwiftProtobuf
+import _Concurrency
+import _StringProcessing
+public struct S4_Pb_Snapshot {
+  public var version: Swift.Int64
+  public var documents: [S4Protos.S4_Pb_Document]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension S4Protos.S4_Pb_Snapshot : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Pb_Snapshot : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Pb_Snapshot, rhs: S4Protos.S4_Pb_Snapshot) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum S4_Pb_MutationType : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case unknown
+  case upsert
+  case delete
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Pb_MutationType : Swift.CaseIterable {
+  public static var allCases: [S4Protos.S4_Pb_MutationType]
+  public typealias AllCases = [S4Protos.S4_Pb_MutationType]
+}
+public struct S4_Pb_Mutation {
+  public var stateVersion: Swift.Int64
+  public var type: S4Protos.S4_Pb_MutationType
+  public var doc: S4Protos.S4_Pb_Document {
+    get
+    set
+  }
+  public var hasDoc: Swift.Bool {
+    get
+  }
+  public mutating func clearDoc()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension S4Protos.S4_Pb_MutationType : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Pb_Mutation : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Pb_MutationType : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension S4Protos.S4_Pb_Mutation : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Pb_Mutation, rhs: S4Protos.S4_Pb_Mutation) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct S4_Pb_Document {
+  public var collectionName: Swift.String
+  public var docID: Swift.String
+  public var expiresAt: SwiftProtobuf.Google_Protobuf_Timestamp {
+    get
+    set
+  }
+  public var hasExpiresAt: Swift.Bool {
+    get
+  }
+  public mutating func clearExpiresAt()
+  public var content: Foundation.Data
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension S4Protos.S4_Pb_Document : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Pb_Document : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Pb_Document, rhs: S4Protos.S4_Pb_Document) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct S4_Gate_UpsertRequest {
+  public var stateID: Swift.String
+  public var document: S4Protos.S4_Pb_Document {
+    get
+    set
+  }
+  public var hasDocument: Swift.Bool {
+    get
+  }
+  public mutating func clearDocument()
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_DeleteRequest {
+  public var stateID: Swift.String
+  public var collectionName: Swift.String
+  public var docID: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_GetSnapshotRequest {
+  public var stateID: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_GetCollectionRequest {
+  public var stateID: Swift.String
+  public var collectionName: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_GetCollectionResponse {
+  public var documents: [S4Protos.S4_Pb_Document]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_GetDocumentRequest {
+  public var stateID: Swift.String
+  public var collectionName: Swift.String
+  public var docID: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_SyncRequest {
+  public var stateID: Swift.String
+  public var lastSyncedVersion: Swift.Int64
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct S4_Gate_SyncResponse {
+  public var stateID: Swift.String
+  public var syncResult: S4Protos.S4_Gate_SyncResponse.OneOf_SyncResult?
+  public var delta: S4Protos.S4_Gate_SyncDelta {
+    get
+    set
+  }
+  public var snapshot: S4Protos.S4_Pb_Snapshot {
+    get
+    set
+  }
+  public var syncBrokerHost: Swift.String
+  public var syncBrokerPort: Swift.UInt32
+  public var syncBrokerSsl: Swift.Bool
+  public var stateTopic: Swift.String
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public enum OneOf_SyncResult : Swift.Equatable {
+    case delta(S4Protos.S4_Gate_SyncDelta)
+    case snapshot(S4Protos.S4_Pb_Snapshot)
+    public static func == (a: S4Protos.S4_Gate_SyncResponse.OneOf_SyncResult, b: S4Protos.S4_Gate_SyncResponse.OneOf_SyncResult) -> Swift.Bool
+  }
+  public init()
+}
+public struct S4_Gate_SyncDelta {
+  public var mutations: [S4Protos.S4_Pb_Mutation]
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension S4Protos.S4_Gate_UpsertRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_DeleteRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_GetSnapshotRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_GetCollectionRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_GetCollectionResponse : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_GetDocumentRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_SyncRequest : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_SyncResponse : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_SyncResponse.OneOf_SyncResult : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_SyncDelta : @unchecked Swift.Sendable {
+}
+extension S4Protos.S4_Gate_UpsertRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_UpsertRequest, rhs: S4Protos.S4_Gate_UpsertRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_DeleteRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_DeleteRequest, rhs: S4Protos.S4_Gate_DeleteRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_GetSnapshotRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_GetSnapshotRequest, rhs: S4Protos.S4_Gate_GetSnapshotRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_GetCollectionRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_GetCollectionRequest, rhs: S4Protos.S4_Gate_GetCollectionRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_GetCollectionResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_GetCollectionResponse, rhs: S4Protos.S4_Gate_GetCollectionResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_GetDocumentRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_GetDocumentRequest, rhs: S4Protos.S4_Gate_GetDocumentRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_SyncRequest : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_SyncRequest, rhs: S4Protos.S4_Gate_SyncRequest) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_SyncResponse : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_SyncResponse, rhs: S4Protos.S4_Gate_SyncResponse) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension S4Protos.S4_Gate_SyncDelta : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: S4Protos.S4_Gate_SyncDelta, rhs: S4Protos.S4_Gate_SyncDelta) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}

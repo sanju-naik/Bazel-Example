@@ -6,7 +6,9 @@
 //
 
 import UIKit
-import FirebaseCrashlytics
+import S4Core
+import AppsFlyerLib
+// import FirebaseCrashlytics
 
 enum MyError: Error {
     case firstError

@@ -1,0 +1,115 @@
+# load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_xcframework_import")
+
+apple_static_xcframework_import(
+    name = "AppsFlyerFramework",
+    sdk_frameworks = [
+        "CoreTelephony",
+        "Security",
+        "SystemConfiguration",
+    ],
+    xcframework_imports = glob(["AppsFlyerLib.xcframework/**"]),
+    visibility = ["//visibility:public"],
+)
+
+# apple_framework(
+#     name = "AppsFlyerFramework",
+#     platforms = {"ios": "9.0"},
+    # sdk_frameworks = [
+    #     "CoreTelephony",
+    #     "Security",
+    #     "SystemConfiguration",
+    # ],
+#     vendored_xcframeworks = [
+#         {
+#             "name": "AppsFlyerLib",
+#             "slices": [
+#                 # {
+#                 #     "identifier": "macos-arm64_x86_64",
+#                 #     "platform": "osx",
+#                 #     "platform_variant": "",
+#                 #     "supported_archs": [
+#                 #         "arm64",
+#                 #         "x86_64",
+#                 #     ],
+#                 #     "path": "AppsFlyerLib.xcframework/macos-arm64_x86_64/AppsFlyerLib.framework",
+#                 #     "build_type": {
+#                 #         "linkage": "static",
+#                 #         "packaging": "framework",
+#                 #     },
+#                 # },
+#                 # {
+#                 #     "identifier": "tvos-arm64",
+#                 #     "platform": "tvos",
+#                 #     "platform_variant": "",
+#                 #     "supported_archs": ["arm64"],
+#                 #     "path": "AppsFlyerLib.xcframework/tvos-arm64/AppsFlyerLib.framework",
+#                 #     "build_type": {
+#                 #         "linkage": "static",
+#                 #         "packaging": "framework",
+#                 #     },
+#                 # },
+#                 # {
+#                 #     "identifier": "ios-arm64_x86_64-maccatalyst",
+#                 #     "platform": "ios",
+#                 #     "platform_variant": "maccatalyst",
+#                 #     "supported_archs": [
+#                 #         "arm64",
+#                 #         "x86_64",
+#                 #     ],
+#                 #     "path": "AppsFlyerLib.xcframework/ios-arm64_x86_64-maccatalyst/AppsFlyerLib.framework",
+#                 #     "build_type": {
+#                 #         "linkage": "static",
+#                 #         "packaging": "framework",
+#                 #     },
+#                 # },
+#                 {
+#                     "identifier": "ios-arm64_i386_x86_64-simulator",
+#                     "platform": "ios",
+#                     "platform_variant": "simulator",
+#                     "supported_archs": [
+#                         "arm64",
+#                         "i386",
+#                         "x86_64",
+#                         "sim_arm64"
+#                     ],
+#                     "path": "AppsFlyerLib.xcframework/ios-arm64_i386_x86_64-simulator/AppsFlyerLib.framework",
+#                     "build_type": {
+#                         "linkage": "static",
+#                         "packaging": "framework",
+#                     },
+#                 },
+#                 # {
+#                 #     "identifier": "tvos-arm64_x86_64-simulator",
+#                 #     "platform": "tvos",
+#                 #     "platform_variant": "simulator",
+#                 #     "supported_archs": [
+#                 #         "arm64",
+#                 #         "x86_64",
+#                 #     ],
+#                 #     "path": "AppsFlyerLib.xcframework/tvos-arm64_x86_64-simulator/AppsFlyerLib.framework",
+#                 #     "build_type": {
+#                 #         "linkage": "static",
+#                 #         "packaging": "framework",
+#                 #     },
+#                 # },
+#                 {
+#                     "identifier": "ios-arm64_armv7",
+#                     "platform": "ios",
+#                     "platform_variant": "",
+#                     "supported_archs": [
+#                         "arm64",
+#                         "armv7",
+#                     ],
+#                     "path": "AppsFlyerLib.xcframework/ios-arm64_armv7/AppsFlyerLib.framework",
+#                     "build_type": {
+#                         "linkage": "static",
+#                         "packaging": "framework",
+#                     },
+#                 },
+#             ],
+#         },
+#     ],
+    # visibility = ["//visibility:public"],
+# )

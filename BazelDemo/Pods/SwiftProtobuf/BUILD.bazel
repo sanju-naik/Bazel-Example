@@ -1,0 +1,23 @@
+# load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "SwiftProtobuf",
+    srcs = glob(["Sources/SwiftProtobuf/**/*.swift"]),
+    visibility = ["//visibility:public"],
+    module_name = "SwiftProtobuf",
+    # alwayslink = True,
+    # linkopts = ["-all_load"],
+    copts = ["-enable-library-evolution"] # BUILD_LIBRARY_FOR_DISTRIBUTION
+)
+
+# apple_framework(
+#     name = "SwiftProtobuf",
+#     srcs = glob(["Sources/SwiftProtobuf/**/*.swift"]),
+#     platforms = {"ios": "8.0"},
+#     swift_version = "5.0",
+#     visibility = ["//visibility:public"],
+#     xcconfig = {
+#         "BUILD_LIBRARY_FOR_DISTRIBUTION": "YES"
+#     },
+# )

@@ -1,0 +1,54 @@
+# load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+
+# apple_framework(
+#     name = "S4Protos",
+#     platforms = {"ios": "12.0"},
+#     vendored_xcframeworks = [
+#         {
+#             "name": "S4Protos",
+#             "slices": [
+#                 {
+#                     "identifier": "ios-arm64",
+#                     "platform": "ios",
+#                     "platform_variant": "",
+#                     "supported_archs": ["arm64"],
+#                     "path": "S4Protos.xcframework/ios-arm64/libS4Protos.a",
+#                     "build_type": {
+#                         "linkage": "static",
+#                         "packaging": "library",
+#                     },
+#                 },
+#                 {
+#                     "identifier": "ios-arm64_x86_64-simulator",
+#                     "platform": "ios",
+#                     "platform_variant": "simulator",
+#                     "supported_archs": [
+#                         "arm64",
+#                         "x86_64",
+#                     ],
+#                     "path": "S4Protos.xcframework/ios-arm64_x86_64-simulator/libS4Protos.a",
+#                     "build_type": {
+#                         "linkage": "static",
+#                         "packaging": "library",
+#                     },
+#                 },
+#             ],
+#         },
+#     ],
+#     visibility = ["//visibility:public"],
+#     deps = ["//Pods/SwiftProtobuf"],
+# )
+
+load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_xcframework_import")
+
+apple_static_xcframework_import(
+    name = "S4Protos",
+    xcframework_imports = glob(["S4Protos.xcframework/**"]),
+    visibility = ["//visibility:public"],
+    # alwayslink = True,
+    has_swift = True,
+    deps = [
+        "//Pods/SwiftProtobuf"
+        # "//Pods/S4Protos",
+    ],
+)
