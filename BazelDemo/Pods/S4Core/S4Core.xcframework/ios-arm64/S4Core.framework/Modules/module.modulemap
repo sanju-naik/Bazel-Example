@@ -1,0 +1,11 @@
+framework module S4Core {
+  umbrella header "S4Core.h"
+
+  export *
+  module * { export * }
+}
+
+module S4Core.Swift {
+  header "S4Core-Swift.h"
+  requires objc
+}

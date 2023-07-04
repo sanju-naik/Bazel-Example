@@ -1,32 +1,21 @@
-load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_xcframework_import")
-
-apple_static_xcframework_import(
-    name = "S4Core",
-    xcframework_imports = glob(["S4Core.xcframework/**"]),
-    visibility = ["//visibility:public"],
-    has_swift = True,
-    deps = [
-        "//Pods/LocalStorageInterface",
-        "//Pods/S4Protos",
-    ],
-)
+# load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
 
 # apple_framework(
-#     name = "S4Core",
+#     name = "S4LocalStorage",
 #     platforms = {"ios": "12.0"},
 #     vendored_xcframeworks = [
 #         {
-#             "name": "S4Core",
+#             "name": "S4LocalStorage",
 #             "slices": [
 #                 {
 #                     "identifier": "ios-arm64",
 #                     "platform": "ios",
 #                     "platform_variant": "",
 #                     "supported_archs": ["arm64"],
-#                     "path": "S4Core.xcframework/ios-arm64/S4Core.framework",
+#                     "path": "S4LocalStorage.xcframework/ios-arm64/libS4LocalStorage.a",
 #                     "build_type": {
 #                         "linkage": "static",
-#                         "packaging": "framework",
+#                         "packaging": "library",
 #                     },
 #                 },
 #                 {
@@ -37,18 +26,29 @@ apple_static_xcframework_import(
 #                         "arm64",
 #                         "x86_64",
 #                     ],
-#                     "path": "S4Core.xcframework/ios-arm64_x86_64-simulator/S4Core.framework",
+#                     "path": "S4LocalStorage.xcframework/ios-arm64_x86_64-simulator/libS4LocalStorage.a",
 #                     "build_type": {
 #                         "linkage": "static",
-#                         "packaging": "framework",
+#                         "packaging": "library",
 #                     },
 #                 },
 #             ],
 #         },
 #     ],
 #     visibility = ["//visibility:public"],
-#     deps = [
-#         "//Pods/S4LocalStorage",
-#         "//Pods/S4Protos",
-#     ],
 # )
+
+
+load("@build_bazel_rules_apple//apple:apple.bzl", "apple_static_xcframework_import")
+
+apple_static_xcframework_import(
+    name = "LocalStorageInterface",
+    xcframework_imports = glob(["LocalStorageInterface.xcframework/**"]),
+    visibility = ["//visibility:public"],
+    has_swift = True,
+
+    # deps = [
+    #     "//Pods/S4LocalStorage",
+    #     "//Pods/S4Protos",
+    # ],
+)

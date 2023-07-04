@@ -15,13 +15,13 @@ project 'BazelDemo.xcodeproj'
 target 'BazelDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  # pod 'Alamofire'
-  # pod 'Firebase', '10.8.0'
-  # pod 'FirebaseCrashlytics', '10.8.0'
-  # pod 'FirebaseRemoteConfig', '10.8.0'
-  # pod 'FirebasePerformance', '10.8.0'
-  # pod 'FirebaseDynamicLinks', '10.8.0'
-  # pod 'FirebaseSessions', '10.8.0'
+  pod 'Alamofire'
+  pod 'Firebase', '10.8.0'
+  pod 'FirebaseCrashlytics', '10.8.0'
+  pod 'FirebaseRemoteConfig', '10.8.0'
+  pod 'FirebasePerformance', '10.8.0'
+  pod 'FirebaseDynamicLinks', '10.8.0'
+  pod 'FirebaseSessions', '10.8.0'
 
 
   # Pods for BazelDemo

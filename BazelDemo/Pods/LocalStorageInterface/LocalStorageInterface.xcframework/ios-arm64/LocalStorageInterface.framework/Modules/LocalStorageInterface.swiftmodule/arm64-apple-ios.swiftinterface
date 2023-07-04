@@ -1,0 +1,82 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LocalStorageInterface
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import LocalStorageInterface
+import Swift
+import _Concurrency
+import _StringProcessing
+public struct S4Document : Swift.Codable {
+  public let stateId: Swift.String
+  public let collectionName: Swift.String
+  public let docId: Swift.String
+  public let content: Foundation.Data
+  public let expiry: Swift.Int64?
+  public static var databaseTableName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case stateId, collectionName, docId, content, expiry
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(stateId: Swift.String, collectionName: Swift.String, docId: Swift.String, content: Foundation.Data, expiry: Swift.Int64?)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension LocalStorageInterface.S4Document : Swift.Equatable {
+  public static func == (lhs: LocalStorageInterface.S4Document, rhs: LocalStorageInterface.S4Document) -> Swift.Bool
+}
+public protocol LocalStorageInterface {
+  func upsertDocument(_ data: LocalStorageInterface.S4Document, _ completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  func fetchDocuments(_ columns: [LocalStorageInterface.S4Document.CodingKeys : Any], _ completion: @escaping (Swift.Result<[LocalStorageInterface.S4Document]?, any Swift.Error>) -> Swift.Void)
+  func deleteDocuments(_ columns: [LocalStorageInterface.S4Document.CodingKeys : Any], _ completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  func clearDocumentsTable(_ completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  func insertSnapshot(_ data: [LocalStorageInterface.S4Document], _ completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  func clearVersionTable(_ completion: @escaping (Swift.Bool) -> ())
+  func upsertStateIdAndVersion(_ data: LocalStorageInterface.StateVersion, _ completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  func fetchLastSyncedVersion(_ columns: [LocalStorageInterface.StateVersion.CodingKeys : Any]) -> Swift.Int64?
+}
+public struct StateVersion : Swift.Codable {
+  public let stateId: Swift.String
+  public let version: Swift.Int64
+  public static var databaseTableName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case stateId, version
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(stateId: Swift.String, version: Swift.Int64)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension LocalStorageInterface.StateVersion : Swift.Equatable {
+  public static func == (lhs: LocalStorageInterface.StateVersion, rhs: LocalStorageInterface.StateVersion) -> Swift.Bool
+}
+extension LocalStorageInterface.S4Document.CodingKeys : Swift.Equatable {}
+extension LocalStorageInterface.S4Document.CodingKeys : Swift.Hashable {}
+extension LocalStorageInterface.S4Document.CodingKeys : Swift.RawRepresentable {}
+extension LocalStorageInterface.StateVersion.CodingKeys : Swift.Equatable {}
+extension LocalStorageInterface.StateVersion.CodingKeys : Swift.Hashable {}
+extension LocalStorageInterface.StateVersion.CodingKeys : Swift.RawRepresentable {}

@@ -68,7 +68,7 @@ swift_library(
         "BazelDemo/Base.lproj/LaunchScreen.storyboard",
         "BazelDemo/Assets.xcassets",
     ],
-    deps = ["//Pods/S4Core", "//Pods/AppsFlyerFramework"],
+    # deps = ["//Pods/AppsFlyerFramework"],
     # deps = ["//Pods/Firebase","//Pods/FirebaseCrashlytics","//Pods/FirebaseSessions",]
     # select({
     #     ":Debug": ,

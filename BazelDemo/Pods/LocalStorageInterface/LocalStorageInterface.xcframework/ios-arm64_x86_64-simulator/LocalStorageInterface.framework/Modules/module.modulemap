@@ -1,0 +1,11 @@
+framework module LocalStorageInterface {
+  umbrella header "LocalStorageInterface.h"
+
+  export *
+  module * { export * }
+}
+
+module LocalStorageInterface.Swift {
+  header "LocalStorageInterface-Swift.h"
+  requires objc
+}

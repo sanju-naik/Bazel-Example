@@ -1,0 +1,2284 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LocalStorageInterface",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "S4Document",
+        "printedName": "S4Document",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "stateId",
+            "printedName": "stateId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV7stateIdSSvp",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV7stateIdSSvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV7stateIdSSvg",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV7stateIdSSvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "collectionName",
+            "printedName": "collectionName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV14collectionNameSSvp",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV14collectionNameSSvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV14collectionNameSSvg",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV14collectionNameSSvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "docId",
+            "printedName": "docId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV5docIdSSvp",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV5docIdSSvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV5docIdSSvg",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV5docIdSSvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "content",
+            "printedName": "content",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV7content10Foundation4DataVvp",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV7content10Foundation4DataVvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV7content10Foundation4DataVvg",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV7content10Foundation4DataVvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expiry",
+            "printedName": "expiry",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV6expirys5Int64VSgvp",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV6expirys5Int64VSgvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int64?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int64",
+                        "printedName": "Swift.Int64",
+                        "usr": "s:s5Int64V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV6expirys5Int64VSgvg",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV6expirys5Int64VSgvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "databaseTableName",
+            "printedName": "databaseTableName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface10S4DocumentV17databaseTableNameSSvpZ",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV17databaseTableNameSSvpZ",
+            "moduleName": "LocalStorageInterface",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV17databaseTableNameSSvgZ",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV17databaseTableNameSSvgZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV17databaseTableNameSSvsZ",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV17databaseTableNameSSvsZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV17databaseTableNameSSvMZ",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV17databaseTableNameSSvMZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CodingKeys",
+            "printedName": "CodingKeys",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "stateId",
+                "printedName": "stateId",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.S4Document.CodingKeys.Type) -> LocalStorageInterface.S4Document.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO7stateIdyA2EmF",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO7stateIdyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Var",
+                "name": "collectionName",
+                "printedName": "collectionName",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.S4Document.CodingKeys.Type) -> LocalStorageInterface.S4Document.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO14collectionNameyA2EmF",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO14collectionNameyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Var",
+                "name": "docId",
+                "printedName": "docId",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.S4Document.CodingKeys.Type) -> LocalStorageInterface.S4Document.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO5docIdyA2EmF",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO5docIdyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Var",
+                "name": "content",
+                "printedName": "content",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.S4Document.CodingKeys.Type) -> LocalStorageInterface.S4Document.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO7contentyA2EmF",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO7contentyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Var",
+                "name": "expiry",
+                "printedName": "expiry",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.S4Document.CodingKeys.Type) -> LocalStorageInterface.S4Document.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO6expiryyA2EmF",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO6expiryyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.S4Document.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueAESgSS_tcfc",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueAESgSS_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueSSvp",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueSSvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueSSvg",
+                    "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8rawValueSSvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "stringValue",
+                "printedName": "stringValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueSSvp",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueSSvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueSSvg",
+                    "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueSSvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(stringValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.S4Document.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueAESgSS_tcfc",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO11stringValueAESgSS_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "intValue",
+                "printedName": "intValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueSiSgvp",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueSiSgvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Int?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueSiSgvg",
+                    "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueSiSgvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(intValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.S4Document.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                        "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueAESgSi_tcfc",
+                "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO8intValueAESgSi_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV10CodingKeysO",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CodingKey",
+                "printedName": "CodingKey",
+                "usr": "s:s9CodingKeyP",
+                "mangledName": "$ss9CodingKeyP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomDebugStringConvertible",
+                "printedName": "CustomDebugStringConvertible",
+                "usr": "s:s28CustomDebugStringConvertibleP",
+                "mangledName": "$ss28CustomDebugStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(stateId:collectionName:docId:content:expiry:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "S4Document",
+                "printedName": "LocalStorageInterface.S4Document",
+                "usr": "s:21LocalStorageInterface10S4DocumentV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21LocalStorageInterface10S4DocumentV7stateId14collectionName03docG07content6expiryACSS_S2S10Foundation4DataVs5Int64VSgtcfc",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV7stateId14collectionName03docG07content6expiryACSS_S2S10Foundation4DataVs5Int64VSgtcfc",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "S4Document",
+                "printedName": "LocalStorageInterface.S4Document",
+                "usr": "s:21LocalStorageInterface10S4DocumentV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21LocalStorageInterface10S4DocumentV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "LocalStorageInterface",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterface10S4DocumentV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV6encode2toys7Encoder_p_tKF",
+            "moduleName": "LocalStorageInterface",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "S4Document",
+                "printedName": "LocalStorageInterface.S4Document",
+                "usr": "s:21LocalStorageInterface10S4DocumentV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "S4Document",
+                "printedName": "LocalStorageInterface.S4Document",
+                "usr": "s:21LocalStorageInterface10S4DocumentV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterface10S4DocumentV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s21LocalStorageInterface10S4DocumentV2eeoiySbAC_ACtFZ",
+            "moduleName": "LocalStorageInterface",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:21LocalStorageInterface10S4DocumentV",
+        "mangledName": "$s21LocalStorageInterface10S4DocumentV",
+        "moduleName": "LocalStorageInterface",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocalStorageInterface",
+        "printedName": "LocalStorageInterface",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "upsertDocument",
+            "printedName": "upsertDocument(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "S4Document",
+                "printedName": "LocalStorageInterface.S4Document",
+                "usr": "s:21LocalStorageInterface10S4DocumentV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP14upsertDocumentyyAA02S4E0V_ys6ResultOyyts5Error_pGctF",
+            "mangledName": "$s21LocalStorageInterfaceAAP14upsertDocumentyyAA02S4E0V_ys6ResultOyyts5Error_pGctF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchDocuments",
+            "printedName": "fetchDocuments(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[LocalStorageInterface.S4Document.CodingKeys : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CodingKeys",
+                    "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<[LocalStorageInterface.S4Document]?, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<[LocalStorageInterface.S4Document]?, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[LocalStorageInterface.S4Document]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[LocalStorageInterface.S4Document]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "S4Document",
+                                "printedName": "LocalStorageInterface.S4Document",
+                                "usr": "s:21LocalStorageInterface10S4DocumentV"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP14fetchDocumentsyySDyAA10S4DocumentV10CodingKeysOypG_ys6ResultOySayAEGSgs5Error_pGctF",
+            "mangledName": "$s21LocalStorageInterfaceAAP14fetchDocumentsyySDyAA10S4DocumentV10CodingKeysOypG_ys6ResultOySayAEGSgs5Error_pGctF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteDocuments",
+            "printedName": "deleteDocuments(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[LocalStorageInterface.S4Document.CodingKeys : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CodingKeys",
+                    "printedName": "LocalStorageInterface.S4Document.CodingKeys",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV10CodingKeysO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP15deleteDocumentsyySDyAA10S4DocumentV10CodingKeysOypG_ys6ResultOyyts5Error_pGctF",
+            "mangledName": "$s21LocalStorageInterfaceAAP15deleteDocumentsyySDyAA10S4DocumentV10CodingKeysOypG_ys6ResultOyyts5Error_pGctF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearDocumentsTable",
+            "printedName": "clearDocumentsTable(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP19clearDocumentsTableyyys6ResultOyyts5Error_pGcF",
+            "mangledName": "$s21LocalStorageInterfaceAAP19clearDocumentsTableyyys6ResultOyyts5Error_pGcF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "insertSnapshot",
+            "printedName": "insertSnapshot(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[LocalStorageInterface.S4Document]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "S4Document",
+                    "printedName": "LocalStorageInterface.S4Document",
+                    "usr": "s:21LocalStorageInterface10S4DocumentV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP14insertSnapshotyySayAA10S4DocumentVG_ys6ResultOyyts5Error_pGctF",
+            "mangledName": "$s21LocalStorageInterfaceAAP14insertSnapshotyySayAA10S4DocumentVG_ys6ResultOyyts5Error_pGctF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearVersionTable",
+            "printedName": "clearVersionTable(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP17clearVersionTableyyySbcF",
+            "mangledName": "$s21LocalStorageInterfaceAAP17clearVersionTableyyySbcF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "upsertStateIdAndVersion",
+            "printedName": "upsertStateIdAndVersion(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StateVersion",
+                "printedName": "LocalStorageInterface.StateVersion",
+                "usr": "s:21LocalStorageInterface12StateVersionV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP23upsertStateIdAndVersionyyAA0eH0V_ys6ResultOyyts5Error_pGctF",
+            "mangledName": "$s21LocalStorageInterfaceAAP23upsertStateIdAndVersionyyAA0eH0V_ys6ResultOyyts5Error_pGctF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchLastSyncedVersion",
+            "printedName": "fetchLastSyncedVersion(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[LocalStorageInterface.StateVersion.CodingKeys : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CodingKeys",
+                    "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                    "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterfaceAAP22fetchLastSyncedVersionys5Int64VSgSDyAA05StateG0V10CodingKeysOypGF",
+            "mangledName": "$s21LocalStorageInterfaceAAP22fetchLastSyncedVersionys5Int64VSgSDyAA05StateG0V10CodingKeysOypGF",
+            "moduleName": "LocalStorageInterface",
+            "genericSig": "<τ_0_0 where τ_0_0 : LocalStorageInterface.LocalStorageInterface>",
+            "sugared_genericSig": "<Self where Self : LocalStorageInterface.LocalStorageInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:21LocalStorageInterfaceAAP",
+        "mangledName": "$s21LocalStorageInterfaceAAP",
+        "moduleName": "LocalStorageInterface",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LocalStorageInterface",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StateVersion",
+        "printedName": "StateVersion",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "stateId",
+            "printedName": "stateId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface12StateVersionV7stateIdSSvp",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV7stateIdSSvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface12StateVersionV7stateIdSSvg",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV7stateIdSSvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface12StateVersionV7versions5Int64Vvp",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV7versions5Int64Vvp",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface12StateVersionV7versions5Int64Vvg",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV7versions5Int64Vvg",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "databaseTableName",
+            "printedName": "databaseTableName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21LocalStorageInterface12StateVersionV17databaseTableNameSSvpZ",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV17databaseTableNameSSvpZ",
+            "moduleName": "LocalStorageInterface",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface12StateVersionV17databaseTableNameSSvgZ",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV17databaseTableNameSSvgZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface12StateVersionV17databaseTableNameSSvsZ",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV17databaseTableNameSSvsZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21LocalStorageInterface12StateVersionV17databaseTableNameSSvMZ",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV17databaseTableNameSSvMZ",
+                "moduleName": "LocalStorageInterface",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CodingKeys",
+            "printedName": "CodingKeys",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "stateId",
+                "printedName": "stateId",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.StateVersion.CodingKeys.Type) -> LocalStorageInterface.StateVersion.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                        "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                            "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO7stateIdyA2EmF",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO7stateIdyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Var",
+                "name": "version",
+                "printedName": "version",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(LocalStorageInterface.StateVersion.CodingKeys.Type) -> LocalStorageInterface.StateVersion.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                        "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                            "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO7versionyA2EmF",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO7versionyA2EmF",
+                "moduleName": "LocalStorageInterface"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.StateVersion.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                        "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueAESgSS_tcfc",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueAESgSS_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueSSvp",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueSSvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueSSvg",
+                    "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8rawValueSSvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "stringValue",
+                "printedName": "stringValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueSSvp",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueSSvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueSSvg",
+                    "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueSSvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(stringValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.StateVersion.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                        "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueAESgSS_tcfc",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO11stringValueAESgSS_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "intValue",
+                "printedName": "intValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8intValueSiSgvp",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8intValueSiSgvp",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Int?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8intValueSiSgvg",
+                    "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8intValueSiSgvg",
+                    "moduleName": "LocalStorageInterface",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(intValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "LocalStorageInterface.StateVersion.CodingKeys?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "LocalStorageInterface.StateVersion.CodingKeys",
+                        "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO8intValueAESgSi_tcfc",
+                "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO8intValueAESgSi_tcfc",
+                "moduleName": "LocalStorageInterface",
+                "implicit": true,
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:21LocalStorageInterface12StateVersionV10CodingKeysO",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV10CodingKeysO",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CodingKey",
+                "printedName": "CodingKey",
+                "usr": "s:s9CodingKeyP",
+                "mangledName": "$ss9CodingKeyP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomDebugStringConvertible",
+                "printedName": "CustomDebugStringConvertible",
+                "usr": "s:s28CustomDebugStringConvertibleP",
+                "mangledName": "$ss28CustomDebugStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(stateId:version:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StateVersion",
+                "printedName": "LocalStorageInterface.StateVersion",
+                "usr": "s:21LocalStorageInterface12StateVersionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21LocalStorageInterface12StateVersionV7stateId7versionACSS_s5Int64Vtcfc",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV7stateId7versionACSS_s5Int64Vtcfc",
+            "moduleName": "LocalStorageInterface",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StateVersion",
+                "printedName": "LocalStorageInterface.StateVersion",
+                "usr": "s:21LocalStorageInterface12StateVersionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21LocalStorageInterface12StateVersionV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "LocalStorageInterface",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterface12StateVersionV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV6encode2toys7Encoder_p_tKF",
+            "moduleName": "LocalStorageInterface",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StateVersion",
+                "printedName": "LocalStorageInterface.StateVersion",
+                "usr": "s:21LocalStorageInterface12StateVersionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StateVersion",
+                "printedName": "LocalStorageInterface.StateVersion",
+                "usr": "s:21LocalStorageInterface12StateVersionV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21LocalStorageInterface12StateVersionV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s21LocalStorageInterface12StateVersionV2eeoiySbAC_ACtFZ",
+            "moduleName": "LocalStorageInterface",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:21LocalStorageInterface12StateVersionV",
+        "mangledName": "$s21LocalStorageInterface12StateVersionV",
+        "moduleName": "LocalStorageInterface",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/asif\/Documents\/gitclone.noindex\/miscGojekProjects\/s4-ios\/S4\/LocalStorageInterface\/DocumentModel.swift",
+      "kind": "StringLiteral",
+      "offset": 602,
+      "length": 10,
+      "value": "\"document\""
+    },
+    {
+      "filePath": "\/Users\/asif\/Documents\/gitclone.noindex\/miscGojekProjects\/s4-ios\/S4\/LocalStorageInterface\/StateIDModel.swift",
+      "kind": "StringLiteral",
+      "offset": 341,
+      "length": 14,
+      "value": "\"stateVersion\""
+    }
+  ]
+}

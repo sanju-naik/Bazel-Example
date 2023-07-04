@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import S4Core
 import AppsFlyerLib
 // import FirebaseCrashlytics
 
