@@ -94,4 +94,6 @@ BazelDemo/bazel-bin
 BazelDemo/bazel-out
 BazelDemo/bazel-testlogs
 
+BazelDemo/Pods/
+
 BazelDemo/BazelDemo.xcodeproj
