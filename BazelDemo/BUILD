@@ -3,6 +3,7 @@ load("@build_bazel_rules_apple//apple:ios.bzl", "ios_extension")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
 load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_framework")
 
 load("//:custom_schemes.bzl","custom_schemes_for_targets","custom_top_level_targets")
 
@@ -19,6 +20,7 @@ xcodeproj(
     name = "BazelDemo_gen",
     project_name = "BazelDemo",
     tags = ["manual"],
+    # build_mode = "xcode",
     pre_build = "echo 'Hello world'",
     top_level_targets = [
         top_level_target(":BazelDemo", target_environments = ["simulator"]),
@@ -68,7 +70,8 @@ swift_library(
         "BazelDemo/Base.lproj/LaunchScreen.storyboard",
         "BazelDemo/Assets.xcassets",
     ],
-    deps = ["//Pods/Firebase","//Pods/FirebaseCrashlytics","//Pods/FirebaseSessions",]
+    deps = ["MyFrameworkInternal"],
+    # deps = ["//Pods/FirebaseXCF","//Pods/FirebaseCrashlyticsXCF","//Pods/FirebaseSessionsXCF"]
     # select({
     #     ":Debug": ,
     #     ":Release": ["//Pods/Firebase"],
@@ -78,14 +81,16 @@ swift_library(
 ios_application(
     name = "BazelDemo",
     bundle_id = select({
-        "//:Debug": "com.go-jek.ent.staging.develop", # com.bazeldemo.debug.app
+        "//:Debug": "om.bazeldemo.debug.app", # com.bazeldemo.debug.app
         "//:Alpha": "com.bazeldemo.alpha.app",
         "//:Release": "com.bazeldemo.release.app",
     }), 
     families = ["iphone"],
     infoplists = [":BazelDemo/Info.plist"],
     minimum_os_version = "12.0",
-    deps = [":BazelDemoSources"],
+    deps = [":BazelDemoSources",
+        # "@rules_apple_linker//:lld"
+    ], # 
     visibility = ["//visibility:public"],
     resources = select({
         ":Release": ["Resources/GoogleService-Info.plist"],
@@ -97,6 +102,8 @@ ios_application(
             ":Alpha": "Entitlements/Alpha.entitlements",
             ":Release": "Entitlements/Release.entitlements",
      }),
+     frameworks = ["MyFramework"],
+     linkopts = ["-reexport_framework MyFramework","-ld_prime"],
     # launch_storyboard = "BazelDemo/Base.lproj/LaunchScreen.storyboard",
   )
 
@@ -128,6 +135,27 @@ config_setting(
             "//:variant": "alpha",
         },
         visibility = ["//visibility:public"],
+    )
+
+swift_library(
+        name = "MyFrameworkInternal",
+        srcs = glob(["MyFramework/**/*.swift"]),
+        deps = [] + [],
+        visibility = ["//visibility:public"],
+        module_name = "MyFramework",
+        # data = ["AsphaltAloha/AsphaltAlohaAssets/Fonts", "AsphaltAloha/AsphaltAlohaAssets/MapsThemes", "AsphaltAloha/AsphaltAlohaAssets/illustrations", "AsphaltAloha/AsphaltAlohaAssets/animatedIcons", "AsphaltAloha/AsphaltAlohaAssets/animatedIllustrations"] + glob(["AsphaltAloha/AsphaltAlohaAssets/icons.xcassets/**/*.pdf", "AsphaltAloha/AsphaltAlohaAssets/icons.xcassets/**/*.png", "AsphaltAloha/AsphaltAlohaAssets/icons.xcassets/**/*.json"]),
+        # copts = ["-wmo"] + swift_active_compilation_condition(),
+    ) 
+
+ios_framework(
+        name = "MyFramework",
+        deps = ["MyFrameworkInternal"],
+        bundle_id = "com.sanju.MyFramework",
+        infoplists = ["MyFramework/Info.plist"],
+        minimum_os_version = "12.0",
+        families = ["iphone"],
+        visibility = ["//visibility:public"],
+        linkopts = ["-ld_prime","-make_mergeable"],
     )
 
 # swift_library(
