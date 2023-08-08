@@ -6,22 +6,58 @@ project 'BazelDemo.xcodeproj'
 
 plugin 'cocoapods-bazel', {
   rules: {
-    'apple_framework' => { load: '@build_bazel_rules_ios//rules:framework.bzl', rule: 'apple_framework' }.freeze,
-    'ios_application' => { load: '@build_bazel_rules_ios//rules:app.bzl', rule: 'ios_application' }.freeze,
-    'ios_unit_test' => { load: '@build_bazel_rules_ios//rules:test.bzl', rule: 'ios_unit_test' }.freeze
+    'apple_framework' => { load: '//:framework.bzl', rule: 'apple_framework' }.freeze,
+    # 'apple_framework' => { load: '@build_bazel_rules_ios//rules:framework.bzl', rule: 'apple_framework' }.freeze,
+    # 'ios_application' => { load: '@build_bazel_rules_ios//rules:app.bzl', rule: 'ios_application' }.freeze,
+    # 'ios_unit_test' => { load: '@build_bazel_rules_ios//rules:test.bzl', rule: 'ios_unit_test' }.freeze
   }.freeze,
 }
-
+# :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git', 
 target 'BazelDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-  pod 'Alamofire'
-  pod 'Firebase', '10.8.0'
-  pod 'FirebaseCrashlytics', '10.8.0'
-  pod 'FirebaseRemoteConfig', '10.8.0'
-  pod 'FirebasePerformance', '10.8.0'
-  pod 'FirebaseDynamicLinks', '10.8.0'
-  pod 'FirebaseSessions', '10.8.0'
+  use_frameworks! :linkage => :static
+
+  # pod 'Alamofire'
+  # pod 'AppsFlyerFramework', '6.3.0'
+  # pod 'ClickStreamSDK', :git => 'git@source.golabs.io:mobile/clickstream-ios-sdk.git', :branch => 'rename_sdk'
+  # pod 'Clickstream', '1.1.21'
+  # pod 'Clickstream/EventVisualizer', '1.1.21'
+  # pod 'Clickstream/Tracker'
+
+  # pod 'Clickstream', '1.1.19'
+
+  # pod 'Firebase', '10.8.0'
+  # pod 'PromisesObjC', '~> 2.1'
+  # pod 'InterposeKit'
+  # # pod 'FirebaseCoreInternalXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # # pod 'GoogleUtilitiesXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+
+  # pod 'FirebaseXCF', '10.7.0', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseCrashlyticsXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseRemoteConfigXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebasePerformanceXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseDynamicLinksXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseABTestingXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseCoreInternalXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  
+  # pod 'FirebaseSessionsXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+  # pod 'FirebaseAnalyticsXCF', '10.7.0', :source => 'git@source.golabs.io:mobile/ios-ca-podspecs.git'
+
+  
+  # :git => 'git@source.golabs.io:mobile/firebasesessions-framework.git', :branch => 'main'
+  # pod 'FirebaseRemoteConfig', '10.8.0'
+  # pod 'FirebasePerformance', '10.8.0'
+  # pod 'FirebaseDynamicLinks', '10.8.0'
+  # pod 'FirebaseSessions', '10.8.0'
+
+  # pod 'S4Core', '0.0.6'
+  # pod 'S4GRDBLocalStorage', '0.0.6'
+  # pod 'S4LocalStorage', '0.0.6'
+  # pod 'S4CourierFallbackPolling', '0.0.6'
+  # pod 'S4Protos', '0.0.6'
+  # pod 'GoPaySDK', '7.2.103', :modular_headers => true
+  # pod 'Ojo', '2.1.0-pre3', :modular_headers => true
+
 
 
   # Pods for BazelDemo

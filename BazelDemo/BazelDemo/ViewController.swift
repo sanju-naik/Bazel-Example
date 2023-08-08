@@ -6,6 +6,8 @@
 //
 
 import UIKit
+// import CoreAuth
+// import MobileDataNetworking
 // import FirebaseCrashlytics
 
 enum MyError: Error {
@@ -27,6 +29,13 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(button)
         
+        //    guard HTTPRequester.mobileDataAvailable() else {
+        //     // if mobile data is not available then there is no need to try silent login method, rather fallback and don't log signinfailure at this step
+        //     // fallback(reason: "No mobile data")
+        //     print("No mobile data available")
+        //     return
+        // }
+
        let error = MyError.firstError
     //    Crashlytics.crashlytics().record(error: error)
     }

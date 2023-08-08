@@ -15,6 +15,19 @@ load(
 
 xcodeproj_rules_dependencies()
 
+git_repository(
+    name = "build_bazel_rules_ios",
+    remote = "https://github.com/bazel-ios/rules_ios.git",
+    commit = "3884a206840967cee89c4bf16202bd726c118772",
+)
+
+load(
+    "@build_bazel_rules_ios//rules:repositories.bzl",
+    "rules_ios_dependencies"
+)
+
+rules_ios_dependencies()
+
 http_archive(
     name = "build_bazel_rules_apple",
     sha256 = "8ac4c7997d863f3c4347ba996e831b5ec8f7af885ee8d4fe36f1c3c8f0092b2c",

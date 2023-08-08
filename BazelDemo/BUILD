@@ -34,16 +34,16 @@ xcodeproj(
                   "//:variant": "debug",
                   "//command_line_option:features": [],
                   },
-        "Alpha": {"//command_line_option:compilation_mode": "opt",
-                    "//:variant": "alpha",
-                    "//command_line_option:apple_generate_dsym": True,
-                    "//command_line_option:features": [
-                        "swift.debug_prefix_map",
-                        "swift.debug_prefix_map_pwd_is_dot",
-                        "swift.file_prefix_map",
-                        "swift.full_debug_info",
-                    ],
-                },
+        # "Alpha": {"//command_line_option:compilation_mode": "opt",
+        #           "//:variant": "alpha",
+        #           "//command_line_option:apple_generate_dsym": True,
+        #           "//command_line_option:features": [
+        #                 "swift.debug_prefix_map",
+        #                 "swift.debug_prefix_map_pwd_is_dot",
+        #                 "swift.file_prefix_map",
+        #                 "swift.full_debug_info",
+        #             ],
+        #         },
         "Release": {"//command_line_option:compilation_mode": "opt",
                     "//:variant": "release",
                     "//command_line_option:apple_generate_dsym": True,
@@ -70,7 +70,8 @@ swift_library(
         "BazelDemo/Base.lproj/LaunchScreen.storyboard",
         "BazelDemo/Assets.xcassets",
     ],
-    deps = ["MyFrameworkInternal"],
+    # deps = ["MyFrameworkInternal"]
+    # deps = ["//Pods/CoreAuth","//Pods/MobileDataNetworking"],
     # deps = ["//Pods/FirebaseXCF","//Pods/FirebaseCrashlyticsXCF","//Pods/FirebaseSessionsXCF"]
     # select({
     #     ":Debug": ,
@@ -81,12 +82,15 @@ swift_library(
 ios_application(
     name = "BazelDemo",
     bundle_id = select({
-        "//:Debug": "om.bazeldemo.debug.app", # com.bazeldemo.debug.app
+        "//:Debug": "com.bazeldemo.debug.app", # com.bazeldemo.debug.app
         "//:Alpha": "com.bazeldemo.alpha.app",
         "//:Release": "com.bazeldemo.release.app",
     }), 
     families = ["iphone"],
-    infoplists = [":BazelDemo/Info.plist"],
+    infoplists = select({
+        "//:Debug": [":BazelDemo/Info.plist"], # com.bazeldemo.debug.app
+        "//:Release": [":BazelDemo/Info-Release.plist"],
+    }), 
     minimum_os_version = "12.0",
     deps = [":BazelDemoSources",
         # "@rules_apple_linker//:lld"
@@ -102,8 +106,8 @@ ios_application(
             ":Alpha": "Entitlements/Alpha.entitlements",
             ":Release": "Entitlements/Release.entitlements",
      }),
-     frameworks = ["MyFramework"],
-     linkopts = ["-reexport_framework MyFramework","-ld_prime"],
+    #  frameworks = ["MyFramework"],
+    #  linkopts = ["-reexport_framework MyFramework","-ld_prime"],
     # launch_storyboard = "BazelDemo/Base.lproj/LaunchScreen.storyboard",
   )
 
@@ -112,7 +116,7 @@ string_flag(
         build_setting_default = "debug",
         visibility = ["//visibility:public"],
     )
-    
+
 config_setting(
         name = "Release",
         flag_values = {

@@ -12,7 +12,7 @@ build \
   --features=apple.arm64_simulator_use_device_deps \
   --features=swift.index_while_building \
   --features=swift.use_global_index_store \
-  --disk_cache=~/Library/Developer/Xcode/DerivedData/BazelDemoCache.noindex \
+  --define=apple.experimental.tree_artifact_outputs=1 \
   --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec \
 
 test:Debug \
@@ -99,8 +99,6 @@ run:Debug \
 
 # Generate profile & json execution files for build analysis
 # Here is a documentation on how to generate profile & exec files - https://github.com/MobileNativeFoundation/rules_xcodeproj/blob/main/docs/usage.md#rules_xcodeproj_indexbuild 
-build:rules_xcodeproj --profile=/tmp/profile.gz
-build:rules_xcodeproj_indexbuild --profile=
 build:rules_xcodeproj --execution_log_json_file=/tmp/exec-1.json
 build:rules_xcodeproj_indexbuild --execution_log_json_file=
 
