@@ -95,3 +95,6 @@ BazelDemo/bazel-out
 BazelDemo/bazel-testlogs
 
 BazelDemo/BazelDemo.xcodeproj
+
+## Ignore Pods directory
+BazelDemo/Pods
