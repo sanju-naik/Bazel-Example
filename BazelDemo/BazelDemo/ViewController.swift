@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCrashlytics
+import ObjCLib
 
 enum MyError: Error {
     case firstError

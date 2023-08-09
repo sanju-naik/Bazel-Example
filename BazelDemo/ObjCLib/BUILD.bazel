@@ -1,0 +1,14 @@
+
+objc_library(
+      name = "ObjCLib",
+      srcs = glob(["Sources/**/*.m"]),
+      hdrs = glob(["Sources/**/*.h"]),
+    #   sdk_dylibs = kwargs.get('sdk_dylibs'),
+    #   sdk_frameworks = kwargs.get('sdk_frameworks'),
+    #   defines = kwargs.get('xcconfig'),
+      visibility = ["//visibility:public"],
+      module_name = "ObjCLib",
+      enable_modules = True,
+      copts = ["-IObjCLib/Sources/Headers","-IObjCLib/Sources/DemoHeader"],
+    #   data = kwargs.get('data'),
+    )

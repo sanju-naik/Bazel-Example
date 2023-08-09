@@ -12,7 +12,6 @@ build \
   --features=apple.arm64_simulator_use_device_deps \
   --features=swift.index_while_building \
   --features=swift.use_global_index_store \
-  --disk_cache=~/Library/Developer/Xcode/DerivedData/BazelDemoCache.noindex \
   --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec \
 
 test:Debug \
