@@ -69,6 +69,10 @@ swift_library(
         "BazelDemo/Assets.xcassets",
     ],
     deps = ["//ObjCLib"],
+    # copts = [
+    #     "-Xcc", "-iquoteObjCLib/Sources/Headers",
+    #     "-Xcc", "-iquoteObjCLib/Sources/DemoHeader",
+    # ],
 )
 
 ios_application(
