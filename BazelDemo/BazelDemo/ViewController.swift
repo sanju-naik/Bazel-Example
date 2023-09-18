@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCrashlytics
+import TImeManager
 
 enum MyError: Error {
     case firstError

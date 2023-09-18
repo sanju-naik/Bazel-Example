@@ -1,0 +1,28 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TImeManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "GCDTimeManager",
+        "printedName": "GCDTimeManager",
+        "declKind": "Import",
+        "moduleName": "TImeManager"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

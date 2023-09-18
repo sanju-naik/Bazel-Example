@@ -10,18 +10,18 @@ http_jar(
     sha256 = "9c4546623a8b9444c06370165ea79a897fcb9881573b18fa5c9ee5c8ba0867e2",
 )
 
-git_repository(
-    name = "build_bazel_rules_ios",
-    remote = "https://github.com/bazel-ios/rules_ios.git",
-    commit = "3884a206840967cee89c4bf16202bd726c118772",
-)
+# git_repository(
+#     name = "build_bazel_rules_ios",
+#     remote = "https://github.com/bazel-ios/rules_ios.git",
+#     commit = "3884a206840967cee89c4bf16202bd726c118772",
+# )
 
-load(
-    "@build_bazel_rules_ios//rules:repositories.bzl",
-    "rules_ios_dependencies"
-)
+# load(
+#     "@build_bazel_rules_ios//rules:repositories.bzl",
+#     "rules_ios_dependencies"
+# )
 
-rules_ios_dependencies()
+# rules_ios_dependencies()
 
 http_archive(
     name = "rules_xcodeproj",
@@ -36,12 +36,24 @@ load(
 
 xcodeproj_rules_dependencies()
 
+http_archive(
+    name = "build_bazel_rules_apple",
+    sha256 = "8ac4c7997d863f3c4347ba996e831b5ec8f7af885ee8d4fe36f1c3c8f0092b2c",
+    url = "https://github.com/bazelbuild/rules_apple/releases/download/2.5.0/rules_apple.2.5.0.tar.gz",
+)
+
 load(
     "@build_bazel_rules_apple//apple:repositories.bzl",
     "apple_rules_dependencies",
 )
 
 apple_rules_dependencies()
+
+http_archive(
+    name = "build_bazel_rules_swift",
+    sha256 = "3a595a64afdcaf65b74b794661556318041466d727e175fa8ce20bdf1bb84ba0",
+    url = "https://github.com/bazelbuild/rules_swift/releases/download/1.10.0/rules_swift.1.10.0.tar.gz",
+)
 
 load(
     "@build_bazel_rules_swift//swift:repositories.bzl",

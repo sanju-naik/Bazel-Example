@@ -1,0 +1,15 @@
+
+objc_library(
+    name = "GCDTimeManager",
+    srcs = glob([
+        "**/*.m",
+        "**/*.h",
+         ]),
+    hdrs = [
+        "GCDTimeManager-umbrella.h",
+        "GCDTimer.h"
+    ],
+    visibility = ["//visibility:public"],
+    module_name = "GCDTimeManager",
+    enable_modules = True,
+)

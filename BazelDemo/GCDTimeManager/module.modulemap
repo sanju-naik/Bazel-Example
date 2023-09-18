@@ -1,0 +1,5 @@
+module GCDTimeManager {
+    umbrella header "GCDTimeManager-umbrella.h"
+    export *
+}
+
