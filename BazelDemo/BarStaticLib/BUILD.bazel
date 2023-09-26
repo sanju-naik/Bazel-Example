@@ -1,0 +1,10 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+        name = "Bar",
+        srcs = glob(["**/*.swift"],
+            exclude = []),
+        visibility = ["//visibility:public"],
+        module_name = "Bar",
+        deps = ["//FooDynamicFramework:FooSources"]
+    )

@@ -1,0 +1,19 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_framework")
+
+swift_library(
+        name = "FooSources",
+        srcs = glob(["**/*.swift"]),
+        visibility = ["//visibility:public"],
+        module_name = "Foo",
+    ) 
+
+ios_framework(
+        name = "FooFramework",
+        deps = ["FooSources"],
+        bundle_id = "com.sanju.foo",
+        infoplists = ["Info.plist"],
+        minimum_os_version = "12.0",
+        families = ["iphone"],
+        visibility = ["//visibility:public"],
+    ) 
