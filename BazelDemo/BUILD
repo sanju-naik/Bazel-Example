@@ -7,6 +7,7 @@ load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 load("//:custom_schemes.bzl","custom_schemes_for_targets","custom_top_level_targets")
 
 load("@build_bazel_rules_apple//apple/testing/default_runner:ios_test_runner.bzl","ios_test_runner")
+exports_files(["ProvisioningProfiles/Development_com.go-jek.ent.staging.develop.mobileprovision"])
 
 load(
     "@rules_xcodeproj//xcodeproj:defs.bzl",
@@ -68,17 +69,13 @@ swift_library(
         "BazelDemo/Base.lproj/LaunchScreen.storyboard",
         "BazelDemo/Assets.xcassets",
     ],
-    deps = ["//Pods/Firebase","//Pods/FirebaseCrashlytics","//Pods/FirebaseSessions",]
-    # select({
-    #     ":Debug": ,
-    #     ":Release": ["//Pods/Firebase"],
-    # })
+    deps = ["//BarStaticLib:Bar", "//FooDynamicFramework:FooSources"],
 )
 
 ios_application(
     name = "BazelDemo",
     bundle_id = select({
-        "//:Debug": "com.go-jek.ent.staging.develop", # com.bazeldemo.debug.app
+        "//:Debug": "com.bazeldemo.debug.app",
         "//:Alpha": "com.bazeldemo.alpha.app",
         "//:Release": "com.bazeldemo.release.app",
     }), 
@@ -87,17 +84,7 @@ ios_application(
     minimum_os_version = "12.0",
     deps = [":BazelDemoSources"],
     visibility = ["//visibility:public"],
-    resources = select({
-        ":Release": ["Resources/GoogleService-Info.plist"],
-        ":Debug": ["Resources/Debug/GoogleService-Info.plist"],
-        "//conditions:default": None, 
-    }),
-    entitlements = select({
-            ":Debug": "Entitlements/Debug.entitlements",
-            ":Alpha": "Entitlements/Alpha.entitlements",
-            ":Release": "Entitlements/Release.entitlements",
-     }),
-    # launch_storyboard = "BazelDemo/Base.lproj/LaunchScreen.storyboard",
+    frameworks = ["//FooDynamicFramework:FooFramework"],
   )
 
 string_flag(
@@ -129,24 +116,3 @@ config_setting(
         },
         visibility = ["//visibility:public"],
     )
-
-# swift_library(
-#     name = "BazelDemoTestsSources",
-#     srcs = glob(["BazelDemoTests/**/*.swift"]),
-#     testonly = True,
-#     deps = [":BazelDemoSources"],
-# )
-
-# ios_unit_test(
-#    name = "BazelDemoTests",
-#    deps = [":BazelDemoTestsSources"],
-#    minimum_os_version = "14.5",
-#    runner = ":IPhone_12",
-#    visibility = ["//visibility:public"],
-# )
-
-# ios_test_runner(
-#     name = "IPhone_12",
-#     device_type = "iPhone 12",
-#     test_environment = {"LCOV_MERGER": "/usr/bin/true"},
-# )
